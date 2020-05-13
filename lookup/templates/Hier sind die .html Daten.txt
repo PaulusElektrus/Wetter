@@ -1,0 +1,8 @@
+
+Hier sind die .html Daten welche dann gerendert werden.
+
+Ich nutze Bootstrap.
+
+Die base.html ist der Header und Footer der Seite.
+
+{ } und {{ }} sind die Django Verknüpfungen zum Python Code.

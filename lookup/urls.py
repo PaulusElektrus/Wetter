@@ -1,3 +1,5 @@
+# ! Hier werden die URLS der Webseite gespeichert und mit der views.py verknüpft !
+
 from django.urls import path
 from . import views
 

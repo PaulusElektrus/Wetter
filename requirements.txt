@@ -12,3 +12,6 @@ requests==2.23.0
 sqlparse==0.3.1
 urllib3==1.25.9
 whitenoise==5.0.1
+
+# ! Wird erstellt mit dem Kommando "pip freeze > requirements.txt" !
+# ! Außerdem wird "touch procfile" benötigt, dort kommt dann der Server "web: gunicorn name_der_App.wsgi !

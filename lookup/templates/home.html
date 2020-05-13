@@ -10,19 +10,21 @@
 
 {% if api %}
 
-    {% if api == "Error..." %}
+    {% if api == "Error2" %}
 
-    Es ist ein Fehler passiert, bitte lade die Seite erneut.
+    </br>
+    <h3>Der eingegebene ZIP-Code ist fehlerhaft. Bitte erneut versuchen!</h3><br/><br/>
+
+    {% elif api == "Error1" %}
+
+    Die API ist aktuell nicht erreichbar. Bitte in ein paar Minuten erneut versuchen.
 
     {% else %}
 
     <div class="jumbotron {{ category_color }}">
-        <h1 class="display-4">{{ api.0.Category.Name }}</h1>
+        <h3 class="display-4">Luftqualität in {{ api.0.ReportingArea }} ist {{ category_name }} aktuell.</h3></br>
         <p class="lead">Qualitätsindex = {{ api.0.AQI }}</p>
-        <p>Von {{ category_description }}</p><br/>
-        <a class="btn btn-primary btn-lg" href="http://zechs.de" role="button">Zum Entwickler</a>
-        <a class="btn btn-primary btn-lg" href="https://docs.airnowapi.org/" role="button">Zur API Quelle</a><br/><br/>
-        <p>Eine kleine App um die Luftqualität in Amerika zu überprüfen. Entwickelt mit Django & Python. Es ist mein erster Versuch Daten aus einer API abzurufen und darzustellen. Um Daten zur Luftqualität abzurufen, einfach den ZIP Code in die Suche eingeben.</p>
+        <p>Von {{ category_description }}</p>
       </div>
 
     {% endif %}

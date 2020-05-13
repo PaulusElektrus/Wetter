@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+# ! Diese drei Pakete sind notwendig für den Betrieb auf Heroku !
 import django_heroku
 import dj_database_url
 from decouple import config
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # ! Das ist die API App die die Daten holt !
     'lookup',
 ]
 
@@ -52,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # ! Wird für Heroku benötigt !
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -125,6 +128,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# ! Wird für Heroku benötigt !
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
