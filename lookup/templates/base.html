@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>API Test</title>
+    <title>Filmsuche</title>
 
     <style>
 
@@ -26,8 +26,8 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">Luftqualität in Amerika</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{% url 'home' %}">Filmsuche</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,8 +39,8 @@
             </li>
           </ul>
           <form action="{%url 'home' %}" class="form-inline my-2 my-lg-0" method="POST">
-            {% csrf_token %} <input class="form-control mr-sm-2" type="search" placeholder="US ZIP-Code" aria-label="Search" name="zipcode">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Suche</button>
+            {% csrf_token %} <input class="form-control mr-sm-2" type="search" placeholder="Filmtitel hier eingeben" aria-label="Search" name="Filmtitel">
+            <button class="btn btn-dark my-2 my-sm-0" type="submit">Suche</button>
           </form>
         </div>
       </nav>
@@ -54,10 +54,10 @@
     </div>
   <div class="container">
     <div class="jumbotron">
-      <p class="lead">Eine kleine App um die Luftqualität in Amerika zu überprüfen. Entwickelt mit Django & Python.</br>Es ist mein erster Versuch Daten aus einer API abzurufen und darzustellen.</br>&rarr; Um Daten zur Luftqualität abzurufen, einfach den ZIP Code in die Suche eingeben. Als Beispiel: 37188</p>
+      <p class="lead">Eine kleine WebApp um Informationen zu einem Filmtitel zu finden. Entwickelt mit Python & Django Framework</br>&rarr; Um nach einem Film zu suchen, einfach den Titel oben rechts eingeben.</p>
       <hr class="my-4">
       <a class="btn btn-primary btn-lg" href="http://zechs.de" target="_blank" role="button">Zum Entwickler</a>
-      <a class="btn btn-primary btn-lg" href="https://docs.airnowapi.org/" target="_blank" role="button">Zur API Quelle</a>
+      <a class="btn btn-primary btn-lg" href="http://www.omdbapi.com/" target="_blank" role="button">Zur API Quelle</a>
     </div>
   </div>
     <!-- Optional JavaScript -->

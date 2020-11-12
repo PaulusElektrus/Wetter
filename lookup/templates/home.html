@@ -2,9 +2,9 @@
 
 {% block content %}
 
-{% if zipcode %}
+{% if Filmtitel %}
 
-    {{ zipcode }}
+    {{ Filmtitel }}
 
 {% endif %}
 
@@ -13,19 +13,21 @@
     {% if api == "Error2" %}
 
     </br>
-    <h3>Der eingegebene ZIP-Code ist fehlerhaft. Bitte erneut versuchen!</h3><br/><br/>
+    <h3>Der eingegebene Filmtitel wurde nicht gefunden. Bitte erneut versuchen!</h3><br/><br/>
 
     {% elif api == "Error1" %}
 
-    Die API ist aktuell nicht erreichbar. Bitte in ein paar Minuten erneut versuchen.
+    Die Datenbank ist aktuell nicht erreichbar. Bitte in ein paar Minuten erneut versuchen.
 
     {% else %}
 
-    <div class="jumbotron {{ category_color }}">
-        <h3 class="display-4">Luftqualität in {{ api.0.ReportingArea }} ist {{ category_name }} aktuell.</h3></br>
-        <p class="lead">Qualitätsindex = {{ api.0.AQI }}</p>
-        <p>Von {{ category_description }}</p>
-      </div>
+    <div class="jumbotron">
+    <ul>
+        {% for key, value in api.items %}
+            <li>{{key}}: {{value}}</li>
+        {% endfor %}
+    </ul>
+    </div>
 
     {% endif %}
 {% endif %}
