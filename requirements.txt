@@ -10,7 +10,7 @@ python-decouple==3.3
 pytz==2020.1
 requests==2.23.0
 sqlparse==0.3.1
-urllib3==1.25.9
+urllib3==1.26.5
 whitenoise==5.0.1
 
 # ! Wird erstellt mit dem Kommando "pip freeze > requirements.txt" !
